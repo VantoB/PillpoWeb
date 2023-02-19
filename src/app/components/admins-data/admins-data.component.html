@@ -16,39 +16,36 @@
                         <table class="table table-hover pb-0 fs-6 fw-bolder">
                             <thead>
                                 <tr>
-                                    <th style="width: 10px">#</th>
-                                    <th style="width: 30px"></th>
+                                    <th style="width: 30px">Image</th>
                                     <th>Name</th>
-                                    <th>Email</th>
+                                    <th>Created Date</th>
                                     <th>Phone number</th>
                                     <th>Account state</th>
-                                    <th>actions</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="
-                                    let videoCreator of videoCreatorsList
-                                    let i = index">
-                                    <td class="fw-bold">{{i+1}}</td>
-                                    <td><img [src]="videoCreator.photo_path" class="videoCreatorImage" /></td>
-                                    <td class="fw-bold">{{ videoCreator.name }} </td>
-                                    <td class="fw-bold">{{ videoCreator.email}} </td>
-                                    <td class="fw-bold">{{ videoCreator.phone_number}}</td>
-                                    <td class='text-success fw-bold' *ngIf="videoCreator.account_state=='active'">
-                                        {{videoCreator.account_state}}</td>
+                                    let admin of adminsList">
+                                    <td><img [src]="admin.photo_path" class="adminImage" /></td>
+                                    <td class="fw-bold">{{ admin.name }} </td>
+                                    <td class="fw-bold">{{ admin.created_at|date}} </td>
+                                    <td class="fw-bold">{{ admin.phone_number}}</td>
+                                    <td class='text-success fw-bold' *ngIf="admin.account_state=='active'">
+                                        {{admin.account_state}}</td>
 
-                                    <td class='text-danger fw-bold' *ngIf="videoCreator.account_state!='active'">
-                                        {{videoCreator.account_state}}</td>
+                                    <td class='text-danger fw-bold' *ngIf="admin.account_state!='active'">
+                                        {{admin.account_state}}</td>
                                     <td><mat-icon [matMenuTriggerFor]="optionsMenu">more_vert</mat-icon></td>
                                     <mat-menu #optionsMenu="matMenu">
                                         <button mat-menu-item class="text-danger"><mat-icon class="text-danger"
                                                 (click)="openDialog('Delete')">delete</mat-icon>Delete</button>
                                         <button mat-menu-item class="text-success"
-                                            *ngIf="videoCreator.account_state!='active'"
+                                            *ngIf="admin.account_state!='active'"
                                             (click)="openDialog('Active')"><mat-icon
                                                 class="text-success">check</mat-icon>Active</button>
                                         <button mat-menu-item class="text-danger"
-                                            *ngIf="videoCreator.account_state=='active'"
+                                            *ngIf="admin.account_state=='active'"
                                             (click)="openDialog('Suspended')"><mat-icon
                                                 class="text-danger">cancel</mat-icon>Suspended</button>
                                     </mat-menu>

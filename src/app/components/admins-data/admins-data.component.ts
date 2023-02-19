@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Ivideocreator } from 'src/app/models/ivideocreator';
 import { DialogComponent } from '../dialog/dialog.component';
 import { faTrash, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Iadmin } from './../../models/iadmin';
 
 @Component({
   selector: 'app-admins-data',
@@ -14,20 +14,20 @@ export class AdminsDataComponent implements OnInit {
   searchText:string = "" ;
   faTrash = faTrash ;
   faSearch = faSearch;
-  videoCreatorsList : Ivideocreator[]=[] ;
-  videoCreatorsListApi : Ivideocreator[]=[] ;
+  adminsList : Iadmin[]=[] ;
+  adminsListApi : Iadmin[]=[] ;
   selected:string = '' ;
 
 
   constructor(public dialog :MatDialog) {
-    this.videoCreatorsListApi = [
-      {name:"martina",photo_path:"assets/videoCreator.png",account_state:"active" ,email:"martinasamoule542@gmail.com",phone_number:"01276333291"},
-      {name:"martina",photo_path:"assets/videoCreator.png",account_state:"suspended" ,email:"martinasamoule542@gmail.com",phone_number:"01276333291"},
-      {name:"martina",photo_path:"assets/videoCreator.png",account_state:"active" ,email:"martinasamoule542@gmail.com",phone_number:"01276333291"},
-      {name:"martina",photo_path:"assets/videoCreator.png",account_state:"active" ,email:"martinasamoule542@gmail.com",phone_number:"01276333291"},
-      {name:"martina",photo_path:"assets/videoCreator.png",account_state:"active" ,email:"martinasamoule542@gmail.com",phone_number:"01276333291"}
+    this.adminsListApi = [
+      {name:"martina",photo_path:"assets/Admin.jpg",account_state:"active" ,phone_number:"01276333291" ,created_at:"1676833668910"},
+      {name:"martina",photo_path:"assets/Admin.jpg",account_state:"suspended" ,phone_number:"01276333291",created_at:"1676833668910"},
+      {name:"martina",photo_path:"assets/Admin.jpg",account_state:"active" ,phone_number:"01276333291",created_at:"1676833668910"},
+      {name:"martina",photo_path:"assets/Admin.jpg",account_state:"suspended" ,phone_number:"01276333291",created_at:"1676833668910"},
+      {name:"martina",photo_path:"assets/Admin.jpg",account_state:"active" ,phone_number:"01276333291",created_at:"1676833668910"}
     ]
-    this.videoCreatorsList = this.videoCreatorsListApi ;
+    this.adminsList = this.adminsListApi ;
    }
 
   ngOnInit(): void {

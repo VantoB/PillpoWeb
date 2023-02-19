@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
   SubmitForm() {
     this.loginService.Login(this.Email?.value ,this.Password?.value);
-    this.Route.navigate(['/Home'])
+    this.Route.navigate(['/Home/VideoReview'])
 
   }
 

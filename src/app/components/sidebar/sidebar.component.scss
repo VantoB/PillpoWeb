@@ -18,13 +18,14 @@ $white: #d8d6d6;
   left: 0;
   right: 0;
   background-color:  $mainBlueColor;
+  overflow: hidden;
 
   ul {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px;
+    overflow: hidden;
     mat-divider {
       background-color: white;
     }
@@ -33,6 +34,7 @@ $white: #d8d6d6;
       list-style: none;
       border-radius: 0.375rem;
       padding: 0 10px;
+      overflow: hidden;
       &:hover {
         background-color: $white;
       }
@@ -40,7 +42,10 @@ $white: #d8d6d6;
       a:hover  {
         color: #5c5c5c;
       }
-
+      // a:visited:active {
+      //  color: #aa2e2e;
+      //  background-color: #d8d6d6;
+      // }
 
       a {
         color: $white;

@@ -1,0 +1,39 @@
+.card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  min-height: 86vh;
+}
+
+.card-img-top {
+  height: 40%;
+}
+
+.LabelFontSize {
+  font-size: 15px;
+}
+
+.ButtonFontSize {
+  background-color: #F32F64;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.user>img {
+  border-radius: 50%;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(8, 8, 8, 0.2);
+    position: relative;
+    width: 13%;
+    height: 5%;
+}
+.addImage{
+  cursor: pointer;
+  height: 20%;
+  position: absolute;
+}
+.labelsFontSize{
+  font-size: small;
+}
