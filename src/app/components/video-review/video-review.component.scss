@@ -2,3 +2,10 @@
     min-height: 87vh;
     height: 100%;
 }
+.nav-tabs .nav-link.active{
+    color: #F32F64;
+    border-color: #F32F64;
+}
+.card-body{
+    overflow-x: hidden;
+}

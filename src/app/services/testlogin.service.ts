@@ -1,38 +1,48 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestloginService {
-  private IsLogin : BehaviorSubject<boolean> ;
-  private UserName : BehaviorSubject<string>  ;
+  private isLogin : BehaviorSubject<boolean>   ;
 
 
-  constructor() { 
-    
-    this.IsLogin = new BehaviorSubject <boolean> (this.IsUserLogged) ;
-    this.UserName = new BehaviorSubject <string> ("") ;
+  constructor(private httpClient:HttpClient ) { 
+    this.isLogin = new BehaviorSubject <boolean> (this.isUserLogged)
   }
-  Login(UserName: string, Password: string)
+  Login(userEmail: string, password: string):Observable<any>
   {
-    let UserToken = '7548621' ;
-    localStorage.setItem("Token", UserToken) ;
-    localStorage.setItem("UserName",UserName);
-    this.IsLogin.next(true) ;
-    this.UserName.next(UserName) ;
+
+    return this.httpClient.post(`${environment.baseUrl}/users/signin`,{
+      "type": "admin",
+      "client": "parent11",
+      "email": userEmail,
+      "password": password
+  })
   }
 
   Logout()
   {
-    localStorage.removeItem("Token") ;
+    localStorage.removeItem("token") ;
     localStorage.removeItem("UserName")
-    this.IsLogin.next(false) ;
-    this.UserName.next("") ;
   }
   
-  get IsUserLogged(): boolean
+  saveUserToken(response:any)
   {
-    return (localStorage.getItem('Token'))? true: false ;
+    console.log(response.server_response)
+    if(response.server_response.credentials.access_token)
+    {
+      localStorage.setItem("token", response.server_response.credentials.access_token);
+      localStorage.setItem("photo_path", response.server_response.message.photo_path)
+      localStorage.setItem("name", response.server_response.message.name)
+    }
   }
+  get isUserLogged():boolean
+  {
+    return (localStorage.getItem('token'))? true: false ;
+  }
+
 }

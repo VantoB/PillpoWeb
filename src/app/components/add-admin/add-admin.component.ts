@@ -49,7 +49,7 @@ export class AddAdminComponent implements OnInit {
           [Validators.required]
         ]
         ,
-        imageURL: [''],
+        imageURL: [[Validators.required]],
       },
       { validators: this.PasswordMatch }
     );

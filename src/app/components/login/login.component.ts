@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit {
   }
 
   SubmitForm() {
-    this.loginService.Login(this.Email?.value ,this.Password?.value);
-    this.Route.navigate(['/Home/VideoReview'])
+    this.loginService.Login(this.Email?.value ,this.Password?.value).subscribe(response=>this.loginService.saveUserToken(response));
+    this.Route.navigate(['/Home/VideoReview/NewVideos'])
 
   }
 

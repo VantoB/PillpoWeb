@@ -1,21 +1,21 @@
-<mat-sidenav-container class="sidebar-container" >
+<mat-sidenav-container class="sidebar-container ps-0 ms-0" >
     <mat-sidenav  [(opened)]="opened" mode="side" color="warn" role="navigation" class="sidenav">
       <div class="mainbackground">
         <ul>
           <div >
             <div class="user"  >
-              <img src="assets\user4-128x128.jpg" alt="useriImg" class="me-5">
+              <img [src]='adminImage' alt="useriImg" class="me-5">
             </div>
             <div class="d-flex flex-column ">
-              <div class="d-flex justify-content-center m-2 fs-4">Welcome</div>
-              <div class="d-flex justify-content-center m-2 fs-3">Martina samoule</div>
+              <div class="d-flex justify-content-center m-2 fs-5">Welcome</div>
+              <div class="d-flex justify-content-center m-2 fs-6">{{adminName}}</div>
             </div>
             
           </div>
   
   
-          <li routerLinkActive="active" *ngFor="let menuItem of menuItems">
-            <a [routerLink]="[menuItem.path]" active>
+          <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="m-1 me-0">
+            <a [routerLink]="[menuItem.path]">
               <mat-icon>{{ menuItem.icon }}</mat-icon>
               <span class="title">{{ menuItem.title }}</span>
             </a>

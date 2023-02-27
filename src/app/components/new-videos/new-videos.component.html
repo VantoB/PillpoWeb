@@ -1,0 +1,46 @@
+<div id="carouselControls" class="carousel slide mt-5 " data-bs-ride="carousel" data-bs-touch="false"
+    data-bs-interval="false">
+    <div class="carousel-inner carouselInner">
+        <div class="carousel-item active w-50">
+            <div class="card cardContant ">
+                <div class="card-body">
+                   <div class="col-6 col-lg-6 col-md-6">
+                    <vg-player>
+                        <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" controls>
+                            <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
+                        </video>
+                    </vg-player>
+                   </div>
+                   <div class="col-6 col-lg-6 col-md-6">
+                    <video></video>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item   ">
+            <div class="card bg-warning w-50  ">
+                <div class="card-header">
+                    Quote
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>A well-known quote, contained in a blockquote element.</p>
+                        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source
+                                Title</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon carouselIcon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon carouselIcon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

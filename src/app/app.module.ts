@@ -46,6 +46,19 @@ import { MainlayoutComponent } from './components/mainlayout/mainlayout.componen
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AdminsDataComponent } from './components/admins-data/admins-data.component';
 import { AddAdminComponent } from './components/add-admin/add-admin.component';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
+import { PaymentsComponent } from './components/payments/payments.component';
+import { OffersComponent } from './components/offers/offers.component';
+import { SellersComponent } from './components/sellers/sellers.component';
+import { AcceptedVideosComponent } from './components/accepted-videos/accepted-videos.component';
+import { NewVideosComponent } from './components/new-videos/new-videos.component';
+import { DeclinedVideosComponent } from './components/declined-videos/declined-videos.component';
+import { TotalVideosComponent } from './components/total-videos/total-videos.component';
+import {VgCoreModule} from '@videogular/ngx-videogular/core';
+import {VgControlsModule} from '@videogular/ngx-videogular/controls';
+import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
+import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +71,15 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
     MainlayoutComponent,
     NotfoundComponent,
     AdminsDataComponent,
-    AddAdminComponent
+    AddAdminComponent,
+    AnalyticsComponent,
+    PaymentsComponent,
+    OffersComponent,
+    SellersComponent,
+    AcceptedVideosComponent,
+    NewVideosComponent,
+    DeclinedVideosComponent,
+    TotalVideosComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +113,11 @@ import { AddAdminComponent } from './components/add-admin/add-admin.component';
     MatSelectModule ,
     HttpClientModule ,
     FormsModule ,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

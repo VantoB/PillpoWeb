@@ -1,15 +1,15 @@
-<div class="d-flex justify-content-center ">
-  <div class="d-flex justify-content-center mb-3">
-    <div class="card">
-      <div class="card-body ">
+<div class="d-flex justify-content-center ps-0 ms-0">
+  <div class="d-flex justify-content-center mb-3 ps-0 ms-0">
+    <div class="card ps-0 ms-0">
+      <div class="card-body ps-0 ms-0">
         <form class="row g-3 needs-validation d-flex justify-content-center p-5" [formGroup]="addAdminForm"
           (ngSubmit)="SubmitForm()">
           <div class="col-md-12 col-lg-12 col-12">
             <input type="file" id="imageInput" name="image" formControlName="imageURL" #AdminImage />
             <div class="user d-flex justify-content-center">
               <img src="assets\user.png" alt="useriImg" class="me-5">
-              <label for="imageInput" class="text-light addImage" (click)="addImage=true">
-                <mat-icon class="mt-2 ms-4">add_photo_alternate</mat-icon>
+              <label for="imageInput" class="text-dark addImageIcon mt-5 ms-1" (click)="addImage=true">
+                <mat-icon class="mt-5 me-5">add_photo_alternate</mat-icon>
               </label>
 
             </div>
@@ -77,8 +77,8 @@
               Confirm password must match password.
             </div>
           </div>
-<div class="d-flex justify-content-start">
-          <div class="col-md-6 col-lg-6 col-6">
+<div class="d-flex justify-content-start ms-0">
+          <div class="col-md-6 col-lg-6 col-6 ps-0">
             <label for="PhoneNumberInput" class="form-label d-flex flex-row text-secondary-emphasis fw-bold mt-2">
               Phone Number
             </label>
