@@ -1,8 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormGroup,
   ValidationErrors,
   ValidatorFn,
   Validators,
@@ -16,13 +16,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-admin.component.scss']
 })
 export class AddAdminComponent implements OnInit {
-  addAdminForm: FormGroup;
+  addAdminForm: UntypedFormGroup;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   addAdminMessage:string = '' ;
   addImage:boolean = false ;
   @ViewChild('AdminImage') AdminImage!: ElementRef;
-  constructor( private FormBuild: FormBuilder, private Route: Router , private addAdminSnackBar: MatSnackBar) {
+  constructor( private FormBuild: UntypedFormBuilder, private Route: Router , private addAdminSnackBar: MatSnackBar) {
     this.addAdminForm = FormBuild.group(
       {
         name: [

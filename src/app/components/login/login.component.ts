@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TestloginService } from './../../services/testlogin.service';
 
@@ -10,12 +10,12 @@ import { TestloginService } from './../../services/testlogin.service';
 })
 export class LoginComponent implements OnInit {
 
-  LoginForm: FormGroup;
+  LoginForm: UntypedFormGroup;
   ErrorMessage: string = '';
   ErrorShow: boolean = false;
 
   constructor(
-    private FormBuild: FormBuilder,
+    private FormBuild: UntypedFormBuilder,
     private Route: Router ,
     private loginService : TestloginService
   ) {
